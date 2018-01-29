@@ -1,5 +1,4 @@
 //print all the root to leaf paths
-
 #include<iostream>
 #include<vector>
 using namespace std;
