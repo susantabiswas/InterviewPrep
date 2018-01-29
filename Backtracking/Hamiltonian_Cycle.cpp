@@ -1,5 +1,4 @@
-//given a graph G,find whether a hamiltonian cycle is present or not
-//in the graph.
+//given a graph G,find whether a hamiltonian cycle is present or not in the graph.
 //A hamiltonian path is the path that covers each vertex exactly once
 //and a hamiltonian cycle is that hamiltonian path where there is an edge from
 //the last node to the starting node
