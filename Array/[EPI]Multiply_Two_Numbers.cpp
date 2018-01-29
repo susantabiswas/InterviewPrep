@@ -1,5 +1,4 @@
 //Multiply two numbers using arrays
-//EPI solution
 #include<iostream>
 #include<vector>
 #include<algorithm>
