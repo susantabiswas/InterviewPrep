@@ -6,3 +6,4 @@ later on I added commonly asked Interview questions also, so you might see diffe
 Karumanchi for C users. 
 The solution for the questions have been done mostly using C++14, though there might be some codes in C also.
 The questions are the most commonly asked and must know algorithm and data structure questions asked in most of the big Tech. companies.
+This has 350+ coding questions.
