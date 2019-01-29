@@ -11,4 +11,11 @@ The solution for the questions have been done mostly using C++14, though there m
 The questions are the most commonly asked and must know algorithm and data structure questions asked in most of the big Tech. companies.
 There are 400+ coding problems.
 
+
 ### NOTE: You may find multiple solution codes for the same problem.
+
+## Advanced Difficulty / STL with C++14:
+For those who want to learn how to use STL for DS & Algo, you can check this repo:<br>
+[EPI solutions repo](https://github.com/susantabiswas/epi-solutions). 
+<br>Here you will find even difficult problems solved using STL. The problems are
+from <strong>Elements of Programing Interviews</strong> book. The codes are full of comments for easier explanantion.
