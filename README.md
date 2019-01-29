@@ -9,10 +9,8 @@ Most of the questions here are taken from geeksforgeeks, Elements of Programming
 
 The solution for the questions have been done mostly using C++14, though there might be some codes in C also.
 The questions are the most commonly asked and must know algorithm and data structure questions asked in most of the big Tech. companies.
-There are 400+ coding problems.
-
-
-### NOTE: You may find multiple solution codes for the same problem.
+There are 400+ coding problems.<br>
+<b>NOTE: You may find multiple solution codes for the same problem.</b><br>
 
 ## Advanced Difficulty / STL with C++14:
 For those who want to learn how to use STL for DS & Algo, you can check this repo:<br>
