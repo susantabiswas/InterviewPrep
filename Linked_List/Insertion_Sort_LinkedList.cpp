@@ -113,7 +113,6 @@ int main(){
 	Node* head = createNode(3);
 	head->next = createNode(2);
 	head->next->next = createNode(6);
-	head->next->next->next = createNode(5);
 	head->next->next->next = createNode(51);
 	head->next->next->next->next = createNode(2);
 
