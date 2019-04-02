@@ -12,8 +12,6 @@
 
 	inorder to prevent cycle we check if nodes are visited
 	TC: O((E+V)logV)
-
-	Here we do union by rank and root finding by path compression
 */
 #include <iostream>
 #include <vector>
@@ -44,25 +42,29 @@ vector<vector<Edge> > primMST(vector<vector<Edge> >& g) {
 	// add all the edges of starting vertex
 	for(const auto& e: g[0])
 		min_heap.emplace(e);
-
+	// mark the starting vertex visited
+	visited[0] = true;
+	
 	vector<vector<Edge> > mst(N);
 
-	// in BFS manner we add vertices to priority queue by pushing their updated cut cost
+	// in BFS manner we add edges for current vertex and each time pick the smallest weight edge
 	while(!min_heap.empty()) {
 		Edge e = min_heap.top();
 		min_heap.pop();
-
+		
 		// check if it has already been visited or not
-		if(visited[e.start] == false) {
+		if(visited[e.end] == false) {
 			// mark it as visited
-			visited[e.start] = true;
+			visited[e.end] = true;
 			// add to MST
 			mst[e.start].emplace_back(e);
 
 			// add all its adjacent edges if they are not visited
-			for(const auto& edge: g[e.end])
-				if(visited[edge.end] == false)
+			for(const auto& edge: g[e.end]) {
+				if(visited[edge.end] == false) {
 					min_heap.emplace(edge);
+				}
+			}
 		}
 	}
 
@@ -94,11 +96,12 @@ int main() {
     for(int i = 0; i < M; i++) {
 		cin >> a >> b >> w;
 		g[a].emplace_back(Edge{a, b, w}); 
+		g[b].emplace_back(Edge{b, a, w}); 
 	}
     
     displayGraph(g);
     
-	// create MST using Kruskal's algo
+	// create MST using Prim's algo
 	auto mst = primMST(g);
 	displayGraph(mst);
 	return 0;
