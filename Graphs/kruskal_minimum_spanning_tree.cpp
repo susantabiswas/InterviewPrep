@@ -6,7 +6,7 @@
 		2. check if on adding it can cause a cycle or not to the existing edges in MST
 		3. repeat step 2
 
-	TC: O(ElogE) heap pops + O(ElogV) union operation
+	TC: O(ElogE) sorting + O(ElogV) union operation
 
 	Here we do union by rank and root finding by path compression
 */
@@ -102,24 +102,26 @@ vector<vector<Edge> > kruskalMST(vector<vector<Edge> >& g) {
     
 	vector<vector<Edge> > mst(N);
 
-	// create a min-heap of edge weights
-	priority_queue<Edge, vector<Edge>, function<bool(Edge, Edge)> >
-		min_heap([](const Edge &a, const Edge& b)->bool{
-			return a.weight > b.weight; 
-		});
+	vector<Edge> edges;
 
 	for(int i = 0; i < g.size(); i++) {
 		for(int j = 0; j < g[i].size(); j++)
-			min_heap.emplace(g[i][j]);
+			edges.emplace_back(g[i][j]);
 	}
+	
+	// sort the edges acc to weight
+	sort(edges.begin(), edges.end(), [](const Edge& a, const Edge& b)->bool{
+		return a.weight < b.weight;	
+	});
+	
+	int curr = 0;
 	
 	// add edges till there are N-1 edges in MST
 	int e = 0;
-	while(e < N - 1 && !min_heap.empty()) {
+	while(e < N - 1) {
 		// min weight edge
-		Edge min_edge = min_heap.top();
-		min_heap.pop();
-
+		Edge min_edge = edges[curr++];
+		
 		// check if adding this will create a cycle or not
 		// current edge will be added only if it doesnt create a cycle
 		if(findOp(arr, min_edge.start, min_edge.end) == false) {
