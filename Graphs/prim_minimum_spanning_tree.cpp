@@ -57,7 +57,7 @@ vector<vector<Edge> > primMST(vector<vector<Edge> >& g) {
 			// mark it as visited
 			visited[e.start] = true;
 			// add to MST
-			mst.emplace_back(e);
+			mst[e.start].emplace_back(e);
 
 			// add all its adjacent edges if they are not visited
 			for(const auto& edge: g[e.end])
@@ -68,6 +68,17 @@ vector<vector<Edge> > primMST(vector<vector<Edge> >& g) {
 
 	
 	return mst;
+}
+
+
+void displayGraph(vector<vector<Edge> >& g) {
+	for(int i = 0; i < g.size(); i++) {
+		cout << i << ": ";
+		for(int j = 0; j < g[i].size(); j++)
+			cout << "(" << g[i][j].end <<", " <<g[i][j].weight<<")  ";
+		cout << endl;
+	}
+	cout << endl;	
 }
 
 int main() {
