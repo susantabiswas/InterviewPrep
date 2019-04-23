@@ -5,7 +5,7 @@
 	
 	With each vertex we associate the cut cost
 	make starting node's cut cost = 0
-	while all the nodes are visited:
+	while all the nodes are unvisited:
 		pick the vertex with least cut cost, if it is unvisited
 		add to mst set
 		mark it visited
