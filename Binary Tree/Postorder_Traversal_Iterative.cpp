@@ -1,4 +1,4 @@
-//Postoder traversal using iterative method
+//Postorder traversal using iterative method
 
 #include<iostream>
 #include<stack>
@@ -23,7 +23,7 @@ Node* createNode(int data){
 		return NULL;
 }
 
-//displays the tree in preorder traversal using Iterative method
+//displays the tree in postorder traversal using Iterative method
 /*
 	we keep track of the previous node of the current node,there can be three conditions:
 	1.going down the left subtree or right subtree where the previous is always the parent
